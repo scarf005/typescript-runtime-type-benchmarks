@@ -1,0 +1,1 @@
+{"results":[{"benchmark":"assertLoose","name":"ajv","ops":43717884,"margin":2.06,"runtime":"deno","runtimeVersion":"2.0.0-rc.0+42cf762"},{"benchmark":"assertStrict","name":"ajv","ops":24797422,"margin":1.12,"runtime":"deno","runtimeVersion":"2.0.0-rc.0+42cf762"}]}

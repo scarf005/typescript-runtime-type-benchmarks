@@ -1,13 +1,18 @@
 import { add, complete, cycle, suite } from 'benny';
-import { readFileSync, writeFileSync, existsSync, unlinkSync } from 'fs';
-import { join } from 'path';
+import { readFileSync, writeFileSync, existsSync, unlinkSync } from 'node:fs';
+import { join, dirname } from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { writePreviewGraph } from './graph';
 import { getRegisteredBenchmarks } from './register';
 import type { BenchmarkCase, BenchmarkResult } from './types';
 
+const isDeno = "Deno" in globalThis;
+declare const Deno: any;
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
 const DOCS_DIR = join(__dirname, '../../docs');
-const RUNTIME = process.env.RUNTIME || 'node';
-const RUNTIME_VERSION = process.env.RUNTIME_VERSION || process.version;
+const RUNTIME = isDeno ? 'deno' : (process.env.RUNTIME || 'node');
+const RUNTIME_VERSION = isDeno ? Deno.version.deno : (process.env.RUNTIME_VERSION || process.version);
 const RUNTIME_FOR_PREVIEW = 'node';
 const NODE_VERSION_FOR_PREVIEW = 20;
 

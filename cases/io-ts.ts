@@ -1,5 +1,6 @@
 import { fold } from 'fp-ts/Either';
 import { pipe } from 'fp-ts/function';
+const pipe = (a, ...fns) => fns.reduce((acc, fn) => fn(acc), a);
 import * as t from 'io-ts';
 import { createCase } from '../benchmarks';
 

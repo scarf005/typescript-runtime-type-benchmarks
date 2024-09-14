@@ -7,11 +7,12 @@
     "name": "Roman Filippov",
     "email": "rf@romanfilippov.com"
   },
+  "type": "module",
   "version": "1.0.0",
   "scripts": {
     "lint": "gts check",
     "lint:fix": "gts fix",
-    "start": "ts-node index.ts",
+    "start": "tsx index.ts",
     "test:build": "npm run compile:spectypes && npm run compile:ts-runtime-checks && npm run compile:typebox && npm run compile:typia && npm run compile:deepkit && tsc --noEmit",
     "test": "npm run compile:spectypes && npm run compile:ts-runtime-checks && npm run compile:typebox && npm run compile:typia && npm run compile:deepkit && jest",
     "docs:serve": "serve docs",
@@ -20,7 +21,7 @@
     "compile:deepkit": "deepkit-type-install && rimraf cases/deepkit/build && tsc -p cases/deepkit/tsconfig.json",
     "compile:spectypes": "rimraf cases/spectypes/build && tsc -p cases/spectypes/src && babel cases/spectypes/src --out-dir cases/spectypes/build --extensions \".ts\"",
     "compile:ts-runtime-checks": "rimraf cases/ts-runtime-checks/build && tsc -p cases/ts-runtime-checks/src",
-    "compile:typebox": "ts-node cases/typebox/index.ts cases/typebox/build",
+    "compile:typebox": "tsx cases/typebox/index.ts cases/typebox/build",
     "compile:typia": "rimraf cases/typia/build && tsc -p cases/typia/tsconfig.json",
     "prepare": "ts-patch install"
   },
@@ -78,6 +79,7 @@
     "ts-json-validator": "0.7.1",
     "ts-node": "10.9.2",
     "ts-runtime-checks": "0.6.1",
+    "tsx": "^4.19.1",
     "typescript": "5.5.4",
     "typia": "6.7.2",
     "unknownutil": "3.18.1",

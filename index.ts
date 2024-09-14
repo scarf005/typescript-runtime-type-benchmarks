@@ -1,11 +1,14 @@
-import * as childProcess from 'child_process';
+import * as childProcess from 'node:child_process';
 import * as benchmarks from './benchmarks';
 import * as cases from './cases';
 
+const isDeno = "Deno" in globalThis;
+declare const Deno: any
+
 async function main() {
   // a runtype lib would be handy here to check the passed command names ;)
-  const [command, ...args] = process.argv.slice(2);
-
+  const [command, ...args] = isDeno ? Deno.args : process.argv.slice(2);
+console.log({command})
   switch (command) {
     case undefined:
     case 'run':
@@ -42,9 +45,10 @@ async function main() {
             });
           }
 
-          const cmd = [...process.argv.slice(0, 2), 'run-internal', c];
+          const cmd = [...(isDeno ? ["deno", "run", "-A", "--unstable-sloppy-imports", "index.ts"] : ["tsx", process.argv[1]]), 'run-internal', c];
 
           console.log('Executing "%s"', c);
+          console.log(cmd)
 
           childProcess.execFileSync(cmd[0], cmd.slice(1), {
             shell: false,
@@ -79,7 +83,7 @@ async function main() {
       console.error('unknown command:', command);
 
       // eslint-disable-next-line no-process-exit
-      process.exit(1);
+      (isDeno ? Deno : process).exit(1);
   }
 }
 

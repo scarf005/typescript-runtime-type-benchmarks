@@ -1,0 +1,9 @@
+{
+  "imports": {
+    "fp-ts/Either": "https://esm.sh/fp-ts@2.16.9/Either",
+    "fp-ts/function": "https://esm.sh/fp-ts@2.16.9/function"
+  },
+  "compilerOptions": {
+    "experimentalDecorators": true
+  }
+}
