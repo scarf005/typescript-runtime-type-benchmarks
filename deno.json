@@ -1,7 +1,8 @@
 {
   "imports": {
     "fp-ts/Either": "https://esm.sh/fp-ts@2.16.9/Either",
-    "fp-ts/function": "https://esm.sh/fp-ts@2.16.9/function"
+    "fp-ts/function": "https://esm.sh/fp-ts@2.16.9/function",
+    "jointz": "https://esm.sh/jointz@7.0.4"
   },
   "compilerOptions": {
     "experimentalDecorators": true

@@ -1,10 +1,15 @@
 {
   "version": "4",
+  "redirects": {
+    "https://esm.sh/jointz": "https://esm.sh/jointz@7.0.4"
+  },
   "remote": {
     "https://esm.sh/fp-ts@2.16.9/Either": "cb628f951575119e43eea505419e3effbd97ff7e38de5d53c4bdde50869b949d",
     "https://esm.sh/fp-ts@2.16.9/function": "2a251e7b381373cfafaee09cd6b32bfb24e500e506b6d923540d60a8ae562ada",
+    "https://esm.sh/jointz@7.0.4": "1809092ec9414ddae21d7256d2fb5dee05ccbec86edd26ab80ad568e6b48651a",
     "https://esm.sh/v135/fp-ts@2.16.9/denonext/Either.js": "2a7a20d75777563989c16acb4dbe46d994fff852bbc9e04fbf589c3bead10ea1",
-    "https://esm.sh/v135/fp-ts@2.16.9/denonext/function.js": "a1c897e5441612b4ad6911e4507e07edbae62eb5c458aa5e3306495add8ebb92"
+    "https://esm.sh/v135/fp-ts@2.16.9/denonext/function.js": "a1c897e5441612b4ad6911e4507e07edbae62eb5c458aa5e3306495add8ebb92",
+    "https://esm.sh/v135/jointz@7.0.4/denonext/jointz.mjs": "50c4cf7ef464b553a6d30f755d8cc88baa73223ec90b474ab40701fec186f62e"
   },
   "workspace": {
     "packageJson": {
